@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1411159172 source:c:\users\pc\downloads\ferrari\ferrari.cpp
+	"ferrari.h"
+
+1411159152 c:\users\pc\downloads\ferrari\ferrari.h
+	<string>
+
+1411390606 source:c:\users\usuário\dropbox\pastas\codeblocksprojects\ferrari\ferrari.cpp
+	"Ferrari.h"
+
+1411390556 c:\users\usuário\dropbox\pastas\codeblocksprojects\ferrari\ferrari.h
+	<string>
+
