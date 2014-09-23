@@ -1,8 +1,10 @@
+#include <iostream>
 #include "Ferrari.h"
 
 using namespace std;
 
-Ferrari::Ferrari(){
+Ferrari::Ferrari(int id){
+	setID(id);
     setCodigoModelo("0");
     setVelocidadeMax(100.0);
     setMotorTurboLigado(false);
@@ -11,7 +13,8 @@ Ferrari::Ferrari(){
     setVelocidadeAtual(0.0);
 }
 
-Ferrari::Ferrari(string codModelo, double velMax){
+Ferrari::Ferrari(int id, string codModelo, double velMax){
+	setID(id);
     setCodigoModelo(codModelo);
     setVelocidadeMax(velMax);
     setMotorTurboLigado(false);
@@ -20,8 +23,9 @@ Ferrari::Ferrari(string codModelo, double velMax){
     setVelocidadeAtual(0.0);
 }
 
-Ferrari::Ferrari(string codModelo, double velMax, bool turbo, int numMarchas, int marcha, double velAtual){
-    setCodigoModelo(codModelo);
+Ferrari::Ferrari(int id, string codModelo, double velMax, bool turbo, int numMarchas, int marcha, double velAtual){
+    setID(id);
+	setCodigoModelo(codModelo);
     setVelocidadeMax(velMax);
     setMotorTurboLigado(turbo);
     setNumeroMarchas(numMarchas);
@@ -29,27 +33,27 @@ Ferrari::Ferrari(string codModelo, double velMax, bool turbo, int numMarchas, in
     setVelocidadeAtual(velAtual);
 }
 
-string Ferrari::getCodigoModelo(){
+string Ferrari::getCodigoModelo() const{
     return codigoModelo;
 }
 
-double Ferrari::getVelocidadeMax(){
+double Ferrari::getVelocidadeMax() const {
     return velocidadeMax;
 }
 
-string Ferrari::getMotorTurboLigado(){
+string Ferrari::getMotorTurboLigado() const {
     return motorTurboLigado;
 }
 
-int Ferrari::getNumeroMarchas(){
+int Ferrari::getNumeroMarchas() const{
     return numeroMarchas;
 }
 
-int Ferrari::getMarchaAtiva(){
+int Ferrari::getMarchaAtiva() const{
     return marchaAtiva;
 }
 
-double Ferrari::getVelocidadeAtual(){
+double Ferrari::getVelocidadeAtual() const{
     return velocidadeAtual;
 }
 
@@ -101,10 +105,27 @@ void Ferrari::acelerar(double aceleracao){
     setVelocidadeAtual(velocidadeAtual + aceleracao);
 }
 
-void Ferrari::freiar(){
+void Ferrari::freiar() {
     setVelocidadeAtual(velocidadeAtual - 10);
 }
 
 void Ferrari::freiar(double desaceleracao){
     setVelocidadeAtual(velocidadeAtual - desaceleracao);
+}
+
+void Ferrari::setID(int id){
+	idFerrari = id;
+}
+
+int Ferrari::getID() const{
+	return idFerrari;
+}
+
+void Ferrari::mostrarDetalhes() const{
+	cout << "Ferrari " << this->getID() << " com o modelo " << this->getCodigoModelo() <<
+    "\nVelocidade Atual: " << this->getVelocidadeAtual() << " Km/h" <<
+    "\nRoda com uma velocidade maxima de " << this->getVelocidadeMax() << " Km/h" <<
+    "\nNumero de marchas: " << this->getNumeroMarchas() <<
+    "\nMarcha Ativa: " << this->getMarchaAtiva() <<
+    "\nMotor Turbo: " << this->getMotorTurboLigado() << endl;
 }
