@@ -6,9 +6,9 @@ using std::string;
 
 class Ferrari{
 public:
-    Ferrari(int);
-    Ferrari(int, string, double);
-    Ferrari(int, string, double, bool, int, int, double);
+    Ferrari(int = 1);
+    Ferrari(int, string, double = 80.0);
+    Ferrari(int, string, double, bool, int = 4, int = 0, double = 0.0);
 	int getID() const;
     string getCodigoModelo() const;
     double getVelocidadeMax() const;
@@ -24,6 +24,8 @@ public:
     void freiar();
     void freiar(double);
 	void mostrarDetalhes() const;
+	void virarAEsquerda() const;
+	void virarADireita() const;
 private:
 	int idFerrari;
     string codigoModelo;

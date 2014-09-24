@@ -33,6 +33,10 @@ Ferrari::Ferrari(int id, string codModelo, double velMax, bool turbo, int numMar
     setVelocidadeAtual(velAtual);
 }
 
+int Ferrari::getID() const {
+	return idFerrari;
+}
+
 string Ferrari::getCodigoModelo() const{
     return codigoModelo;
 }
@@ -45,16 +49,20 @@ string Ferrari::getMotorTurboLigado() const {
     return motorTurboLigado;
 }
 
-int Ferrari::getNumeroMarchas() const{
+int Ferrari::getNumeroMarchas() const {
     return numeroMarchas;
 }
 
-int Ferrari::getMarchaAtiva() const{
+int Ferrari::getMarchaAtiva() const {
     return marchaAtiva;
 }
 
-double Ferrari::getVelocidadeAtual() const{
+double Ferrari::getVelocidadeAtual() const {
     return velocidadeAtual;
+}
+
+void Ferrari::setID(int id){
+	idFerrari = id;
 }
 
 void Ferrari::setCodigoModelo(string codModelo){
@@ -75,13 +83,12 @@ void Ferrari::setMotorTurboLigado(bool turbo){
 }
 
 void Ferrari::setMarchaAtiva(int marcha){
-    if(marcha > 0 && marcha <= numeroMarchas){
+    if(marcha >= 0 && marcha <= numeroMarchas){
         marchaAtiva = marcha;
     }
     else{
         marchaAtiva = numeroMarchas;
     }
-
 }
 
 void Ferrari::setNumeroMarchas(int marchas){
@@ -89,7 +96,7 @@ void Ferrari::setNumeroMarchas(int marchas){
 }
 
 void Ferrari::setVelocidadeAtual(double velAtual){
-    if(velAtual < velocidadeMax){
+    if(velAtual >= 0 && velAtual < velocidadeMax){
         velocidadeAtual = velAtual;
     }
     else{
@@ -113,19 +120,20 @@ void Ferrari::freiar(double desaceleracao){
     setVelocidadeAtual(velocidadeAtual - desaceleracao);
 }
 
-void Ferrari::setID(int id){
-	idFerrari = id;
-}
-
-int Ferrari::getID() const{
-	return idFerrari;
-}
-
-void Ferrari::mostrarDetalhes() const{
-	cout << "Ferrari " << this->getID() << " com o modelo " << this->getCodigoModelo() <<
-    "\nVelocidade Atual: " << this->getVelocidadeAtual() << " Km/h" <<
+void Ferrari::mostrarDetalhes() const {
+	cout << "Ferrari " << this->getID() << ", modelo " << this->getCodigoModelo() <<
+    "\nVelocidade atual: " << this->getVelocidadeAtual() << " Km/h" <<
     "\nRoda com uma velocidade maxima de " << this->getVelocidadeMax() << " Km/h" <<
     "\nNumero de marchas: " << this->getNumeroMarchas() <<
-    "\nMarcha Ativa: " << this->getMarchaAtiva() <<
-    "\nMotor Turbo: " << this->getMotorTurboLigado() << endl;
+    "\nMarcha ativa: " << this->getMarchaAtiva() <<
+    "\nMotor Turbo: " << this->getMotorTurboLigado() <<
+	"\n" << endl;
+}
+
+void Ferrari::virarAEsquerda() const {
+	cout << "A Ferrari " << this->getID() << " virou a esquerda.\n" << endl;
+}
+
+void Ferrari::virarADireita() const {
+	cout << "A Ferrari " << this->getID() << " virou a direita.\n" << endl;
 }

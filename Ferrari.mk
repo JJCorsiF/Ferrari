@@ -5,15 +5,15 @@
 ## Debug
 ProjectName            :=Ferrari
 ConfigurationName      :=Debug
-WorkspacePath          := "C:\Users\Lab 4\Downloads\CodeLiteProjects"
-ProjectPath            := "C:\Users\Lab 4\Downloads\CodeLiteProjects\Ferrari"
+WorkspacePath          := "D:\MEGA\Pastas\CodeLiteProjects"
+ProjectPath            := "D:\MEGA\Pastas\CodeLiteProjects\Ferrari"
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=Lab 4
-Date                   :=09/22/14
+User                   :=Usuario
+Date                   :=09/24/14
 CodeLitePath           :="C:\Program Files\CodeLite"
 LinkerName             :=C:/MinGW-4.8.1/bin/g++.exe 
 SharedObjectLinkerName :=C:/MinGW-4.8.1/bin/g++.exe -shared -fPIC
@@ -91,7 +91,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Lab 4/Downloads/CodeLiteProjects/Ferrari/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "D:/MEGA/Pastas/CodeLiteProjects/Ferrari/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM "main.cpp"
 
@@ -99,7 +99,7 @@ $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) "main.cpp"
 
 $(IntermediateDirectory)/Ferrari.cpp$(ObjectSuffix): Ferrari.cpp $(IntermediateDirectory)/Ferrari.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Lab 4/Downloads/CodeLiteProjects/Ferrari/Ferrari.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Ferrari.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "D:/MEGA/Pastas/CodeLiteProjects/Ferrari/Ferrari.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Ferrari.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Ferrari.cpp$(DependSuffix): Ferrari.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Ferrari.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Ferrari.cpp$(DependSuffix) -MM "Ferrari.cpp"
 
