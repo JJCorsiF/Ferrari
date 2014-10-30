@@ -95,4 +95,5 @@
     <File Name="Ferrari.h"/>
     <File Name="Ferrari.cpp"/>
   </VirtualDirectory>
+  <Dependencies Name="Debug"/>
 </CodeLite_Project>

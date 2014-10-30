@@ -33,6 +33,10 @@ Ferrari::Ferrari(int id, string codModelo, double velMax, bool turbo, int numMar
     setVelocidadeAtual(velAtual);
 }
 
+Ferrari::~Ferrari(){
+	
+}
+
 int Ferrari::getID() const {
 	return idFerrari;
 }

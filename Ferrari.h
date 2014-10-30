@@ -9,6 +9,7 @@ public:
     Ferrari(int = 1);
     Ferrari(int, string, double = 80.0);
     Ferrari(int, string, double, bool, int = 4, int = 0, double = 0.0);
+	~Ferrari();
 	int getID() const;
     string getCodigoModelo() const;
     double getVelocidadeMax() const;
